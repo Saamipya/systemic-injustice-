@@ -87,7 +87,7 @@ def call_model(document, title, jurisdiction, lens, context):
     # Google AI Studio offers a limited free tier for supported Gemini models.
     # No paid-provider fallback is configured: requests fail clearly if free quota is exhausted.
     token = st.secrets.get("GEMINI_API_KEY", os.getenv("GEMINI_API_KEY", ""))
-    model = st.secrets.get("GEMINI_MODEL", os.getenv("GEMINI_MODEL", "gemini-2.5-flash"))
+    model = st.secrets.get("GEMINI_MODEL", os.getenv("GEMINI_MODEL", "gemini-3.8-flash"))
     if not token:
         raise RuntimeError(
             "The site owner has not configured GEMINI_API_KEY. Create a key in Google AI Studio, "
